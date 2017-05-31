@@ -1,0 +1,122 @@
+
+
+body{
+  font: 15px/1.5 Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+
+}
+
+.container{
+  width: 80%;
+  overflow: none;
+  margin: auto;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+header{
+  background:#3c3436;
+  color:#ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  width: 100%;
+  border-bottom: #eb0000 3px solid;
+}
+
+header a{
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+}
+
+header li{
+  text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+
+  float: left;
+  display: inline;
+  margin-right: 10px;
+  padding: 0 20px;
+  padding-bottom: 2px;
+
+}
+
+header li:hover{
+  transform: scale(1.2);
+  color: #eb0000;
+}
+
+ header .logo{
+  float: left;
+}
+
+header nav{
+  float: right;
+  margin-top: 10px;
+}
+
+.showcase{
+  background: url(pic.jpg) no-repeat;
+  min-height: 400px;
+  background-position: 50% 75%;
+  text-align: center;
+	color: white;
+  display: flex;
+}
+
+.showcase h1{
+  margin-top: 0;
+  font-size: 55px;
+  margin-bottom: 65px;
+
+}
+
+.showcase p{
+  font-size: 16px;
+}
+
+
+section.boxes{
+  color: black;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+section.boxes h1{
+  font-size: 30px;
+  color: red;
+}
+section .box1{
+flex-basis: 30%;
+}
+
+section .box2{
+flex-basis: 30%;
+}
+
+section .box3{
+flex-basis: 30%;
+}
+section.move{
+  padding: 0;
+	margin: 0;
+  background: url(two.jpg) -0px -646px no-repeat fixed;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner h1{
+  	font-size: 50px;
+  	text-shadow: 3px 4px black;
+    text-align: center;
+  }
+}
