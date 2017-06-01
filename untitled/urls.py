@@ -19,5 +19,5 @@ import music
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', include('music.urls')),
+    url(r'^posts/', include('music.urls')),
 ]
