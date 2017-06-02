@@ -1,15 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Document</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
+{% extends "base.html" %}
 
-{{ instance.artist }}
-{{ instance.release }}
-{{ instance.id }}
+{% block head_title %}{{ instance.title }}| {{ block.super }} {% endblock %}
+
+{% block content %}
+
+{#        <div class="col-sm-6 col-sm-offset-3 text-center " >#}
+            <div class="col-sm-4 col-sm-offset-4 " style="padding-top: 50px;">
+            {% if instance.image %}
+                <img src="{{ instance.image.url }}" class="img-responsive" alt="">
+            {% endif%}
+            </div>
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+            <h1>{{ title }}</h1>
+            <h3>{{ instance.artist }}</h3>
+            {{ instance.release }}
+            </div>
+{#        </div>#}
 
 
-</body>
-</html>
+{% endblock content %}

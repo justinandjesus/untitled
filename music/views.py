@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import music
 from .forms import musicForm
+
 # Create your views here.
 def index(request):
     #instance=music.objects.get(id=55)
@@ -15,7 +16,7 @@ def index(request):
         'title':'All Posts',
         'objList':queryset,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'base.html', context)
 
 def detail(request, id=None):
     instance = get_object_or_404(music, id=id)
@@ -29,7 +30,7 @@ def detail(request, id=None):
 
 
 def create(request):
-    form=musicForm(request.POST or None)
+    form=musicForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         instance=form.save(commit=False)
@@ -49,7 +50,7 @@ def create(request):
 
 def update(request, id=None):
     instance = get_object_or_404(music, id=id)
-    form = musicForm(request.POST or None, instance=instance)
+    form = musicForm(request.POST or None, request.FILES or None, instance=instance)
 
     if form.is_valid():
         instance = form.save(commit=False)
@@ -68,6 +69,3 @@ def delete(request, id=None):
     instance = get_object_or_404(music, id=id)
     instance.delete()
     return redirect("list")
-
-
-

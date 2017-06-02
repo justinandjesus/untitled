@@ -1,16 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+{#{{ block.super }} #}
+<div class="col-sm-8 col-sm-offset-2">
+<h1>Add Song to Playlist!</h1>
+    <hr>
+    <form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-default" type="submit" value="Add Song">
+    </form>
 
-<form method="POST" action="">{% csrf_token %}
-
-    {{ form.as_p }}
-
-<input type="submit" value="Create Post">
-</form>
-
-</body>
-</html>
+</div>
+{% endblock content %}
